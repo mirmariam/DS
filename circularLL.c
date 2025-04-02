@@ -34,6 +34,35 @@ struct Node * insertAtFirst(struct Node *head, int data) {
 
 }
 
+struct Node * deleteNode(struct Node *head, int key) {
+    if (head == NULL) return NULL;
+    struct Node *curr = head, *prev = NULL;
+
+    while (curr->data != key) {
+        if (curr->next == head) {
+            printf("Node not found!\n");
+            return head;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+
+    if (curr == head) {
+        struct Node *temp = head;
+        while (temp->next != head) {
+            temp = temp->next;
+        }
+        head = head->next;
+        temp->next = head;
+        free(curr);
+    } else {
+        prev->next = curr->next;
+        free(curr);
+    }
+
+    return head;
+}
+
 int main() {
     struct Node *head;
     struct Node *second;
@@ -66,6 +95,10 @@ int main() {
     head = insertAtFirst(head, 80);
 
     printf("\nCircular linked list after insertion: \n");
+    linkedListTraversal(head);
+
+    head = deleteNode(head, 5);
+    printf("\nCircular linked list after deletion: \n");
     linkedListTraversal(head);
 
     return 0;
