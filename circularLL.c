@@ -1,4 +1,4 @@
-//Linked list creation, traversal, insertion at first
+//Linked list creation, traversal, insertion and deletion
 
 #include<stdio.h>
 #include<stdlib.h>
