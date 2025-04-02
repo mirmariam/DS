@@ -13,10 +13,10 @@ int main() {
   int arr[100], n;
 
   n = create(arr);
-  display(arr,n,0);
-  search(arr,n);
-  n = insertion(arr,n);
-  deletion(arr,n);
+  display(arr, n, 0);
+  search(arr, n);
+  n = insertion(arr, n);
+  deletion(arr, n);
 
   return 0;
 }
@@ -29,7 +29,7 @@ int create(int arr[]) {
   scanf("%d", &n);
 
   for(i = 0;i < n; i++) {
-    printf("Enter the element %d: ",(i+1));
+    printf("Enter the element %d: ",(i + 1));
     scanf("%d", &arr[i]);
   }
 
@@ -38,7 +38,7 @@ int create(int arr[]) {
 
 void display(int arr[], int n, int flag) {
     int i;
-    if(flag==0) {
+    if(flag == 0) {
     printf("The elements of the array are:\n");
     } else {
     printf("The elements of the new array are:\n");
